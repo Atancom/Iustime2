@@ -110,13 +110,11 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, lineId, onAddProje
       'Completed': 'bg-emerald-100 text-emerald-700 border-emerald-200',
       'In Progress': 'bg-blue-50 text-blue-700 border-blue-200',
       'Ready to Start': 'bg-zinc-100 text-zinc-600 border-zinc-200',
-      'Delayed': 'bg-rose-50 text-rose-700 border-rose-200'
     };
     const labels = {
       'Completed': 'Completado',
       'In Progress': 'En Progreso',
       'Ready to Start': 'Listo para iniciar',
-      'Delayed': 'Retrasado'
     };
     return (
       <span className={`px-2.5 py-0.5 rounded text-xs font-semibold border ${styles[status] || styles['Ready to Start']}`}>
@@ -234,7 +232,6 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, lineId, onAddProje
                   >
                     <option value="Ready to Start">Listo para iniciar</option>
                     <option value="In Progress">En Progreso</option>
-                    <option value="Delayed">Retrasado</option>
                     <option value="Completed">Completado</option>
                   </select>
                 </div>
@@ -451,7 +448,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, lineId, onAddProje
                              <div className="flex items-center gap-2">
                                 <div className="w-20 bg-zinc-100 rounded-full h-1.5 overflow-hidden border border-zinc-200">
                                     <div 
-                                    className={`h-1.5 rounded-full ${project.status === 'Delayed' ? 'bg-rose-500' : 'bg-blue-500'}`} 
+                                    className={`h-1.5 rounded-full ${project.status === 'Completed' ? 'bg-emerald-500' : 'bg-blue-500'}`} 
                                     style={{width: `${project.progress || 0}%`}}
                                     ></div>
                                 </div>

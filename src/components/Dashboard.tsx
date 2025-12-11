@@ -2,10 +2,10 @@ import React, { useMemo } from 'react';
 import { Project, Task, Risk } from '../types';
 import { 
   PieChart, Pie, Cell, ResponsiveContainer, 
-  XAxis, YAxis, Tooltip, Legend, CartesianGrid, 
+  BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid, 
   LineChart, Line 
 } from 'recharts';
-import { Users, AlertCircle, Briefcase } from 'lucide-react';
+import { TrendingUp, Users, CheckCircle2, AlertCircle, Briefcase } from 'lucide-react';
 
 interface DashboardProps {
   projects: Project[];
@@ -13,7 +13,7 @@ interface DashboardProps {
   risks: Risk[];
 }
 
-export const Dashboard: React.FC<DashboardProps> = ({ projects, tasks }) => {
+export const Dashboard: React.FC<DashboardProps> = ({ projects, tasks, risks }) => {
 
   const projectStats = useMemo(() => {
     return projects.map(project => {
@@ -85,7 +85,6 @@ export const Dashboard: React.FC<DashboardProps> = ({ projects, tasks }) => {
   const statusData = [
     { name: 'Completado', value: tasks.filter(t => t.status === 'Completed').length, color: '#10b981' },
     { name: 'En Progreso', value: tasks.filter(t => t.status === 'In Progress').length, color: '#3b82f6' },
-    { name: 'Retrasado', value: tasks.filter(t => t.status === 'Delayed').length, color: '#f43f5e' },
     { name: 'Por Iniciar', value: tasks.filter(t => t.status === 'Ready to Start').length, color: '#94a3b8' },
   ].filter(d => d.value > 0);
 

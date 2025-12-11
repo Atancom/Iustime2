@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef } from 'react';
 import { Task, Project, ChecklistItem, Attachment } from '../types';
-import { Plus, CheckCircle2, Circle, Trash2, Filter, X, ListTodo, AlertCircle, PlayCircle, CornerDownRight, Paperclip, FileIcon, CheckSquare, MoreHorizontal, Layers, LayoutList, Calculator } from 'lucide-react';
+import { Plus, CheckCircle2, Circle, Trash2, Filter, ArrowUpDown, X, ListTodo, AlertCircle, PlayCircle, CornerDownRight, Paperclip, FileIcon, CheckSquare, MoreHorizontal, Layers, LayoutList, Calculator } from 'lucide-react';
 
 interface TasksProps {
   tasks: Task[];
@@ -177,7 +177,7 @@ export const Tasks: React.FC<TasksProps> = ({ tasks, projects, lineId, onAddTask
   };
 
   const toggleStatus = (task: Task) => {
-    const statusCycle: Task['status'][] = ['Ready to Start', 'In Progress', 'Delayed', 'Completed'];
+    const statusCycle: Task['status'][] = ['Ready to Start', 'In Progress', 'Completed'];
     const nextStatus = statusCycle[(statusCycle.indexOf(task.status) + 1) % statusCycle.length];
     onUpdateTask({ ...task, status: nextStatus });
   };
@@ -238,7 +238,6 @@ export const Tasks: React.FC<TasksProps> = ({ tasks, projects, lineId, onAddTask
      switch (status) {
        case 'Completed': return <span className="flex items-center text-emerald-600 text-xs font-bold bg-emerald-50 px-2 py-1 rounded border border-emerald-100"><CheckCircle2 className="h-3 w-3 mr-1"/> Completada</span>;
        case 'In Progress': return <span className="flex items-center text-blue-600 text-xs font-bold bg-blue-50 px-2 py-1 rounded border border-blue-100"><PlayCircle className="h-3 w-3 mr-1"/> En Progreso</span>;
-       case 'Delayed': return <span className="flex items-center text-rose-600 text-xs font-bold bg-rose-50 px-2 py-1 rounded border border-rose-100"><AlertCircle className="h-3 w-3 mr-1"/> Retrasada</span>;
        default: return <span className="flex items-center text-zinc-500 text-xs font-bold bg-zinc-50 px-2 py-1 rounded border border-zinc-200"><Circle className="h-3 w-3 mr-1"/> Por Iniciar</span>;
      }
   };
@@ -403,7 +402,6 @@ export const Tasks: React.FC<TasksProps> = ({ tasks, projects, lineId, onAddTask
                     <select value={newTask.status} onChange={(e) => setNewTask({...newTask, status: e.target.value as any})} className="w-full rounded-md border-zinc-300 p-2 text-sm">
                         <option value="Ready to Start">Listo para iniciar</option>
                         <option value="In Progress">En Progreso</option>
-                        <option value="Delayed">Retrasado</option>
                         <option value="Completed">Completado</option>
                     </select>
                 </div>

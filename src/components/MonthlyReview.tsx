@@ -9,7 +9,7 @@ interface MonthlyReviewProps {
   risks: Risk[];
 }
 
-export const MonthlyReviewView: React.FC<MonthlyReviewProps> = ({ tasks, risks }) => {
+export const MonthlyReviewView: React.FC<MonthlyReviewProps> = ({ lineId, projects, tasks, risks }) => {
   const [selectedMonth, setSelectedMonth] = useState(new Date().toISOString().slice(0, 7)); // YYYY-MM
   
   const [summary, setSummary] = useState('');
@@ -32,14 +32,12 @@ export const MonthlyReviewView: React.FC<MonthlyReviewProps> = ({ tasks, risks }
     });
 
     const completedInMonth = activeTasks.filter(t => t.status === 'Completed').length;
-    const delayedInMonth = activeTasks.filter(t => t.status === 'Delayed').length;
     
     const openRisks = risks.filter(r => r.status === 'Open' || r.status === 'In Progress').length;
 
     return {
         totalActive: activeTasks.length,
         completed: completedInMonth,
-        delayed: delayedInMonth,
         openRisks
     };
   }, [selectedMonth, tasks, risks]);
@@ -176,19 +174,6 @@ export const MonthlyReviewView: React.FC<MonthlyReviewProps> = ({ tasks, risks }
                             <div 
                                 className="bg-emerald-500 h-2 rounded-full" 
                                 style={{width: stats.totalActive > 0 ? `${(stats.completed / stats.totalActive) * 100}%` : '0%'}}
-                            ></div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div className="flex justify-between text-sm mb-1">
-                            <span className="text-zinc-500">Retrasadas</span>
-                            <span className="font-bold text-rose-600">{stats.delayed}</span>
-                        </div>
-                        <div className="w-full bg-zinc-100 rounded-full h-2">
-                            <div 
-                                className="bg-rose-500 h-2 rounded-full" 
-                                style={{width: stats.totalActive > 0 ? `${(stats.delayed / stats.totalActive) * 100}%` : '0%'}}
                             ></div>
                         </div>
                     </div>
