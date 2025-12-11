@@ -9,7 +9,7 @@ interface MonthlyReviewProps {
   risks: Risk[];
 }
 
-export const MonthlyReviewView: React.FC<MonthlyReviewProps> = ({ lineId, projects, tasks, risks }) => {
+export const MonthlyReviewView: React.FC<MonthlyReviewProps> = ({ tasks, risks }) => {
   const [selectedMonth, setSelectedMonth] = useState(new Date().toISOString().slice(0, 7)); // YYYY-MM
   
   const [summary, setSummary] = useState('');

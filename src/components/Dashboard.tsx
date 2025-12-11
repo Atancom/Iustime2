@@ -2,10 +2,10 @@ import React, { useMemo } from 'react';
 import { Project, Task, Risk } from '../types';
 import { 
   PieChart, Pie, Cell, ResponsiveContainer, 
-  BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid, 
+  XAxis, YAxis, Tooltip, Legend, CartesianGrid, 
   LineChart, Line 
 } from 'recharts';
-import { TrendingUp, Users, CheckCircle2, AlertCircle, Briefcase } from 'lucide-react';
+import { Users, AlertCircle, Briefcase } from 'lucide-react';
 
 interface DashboardProps {
   projects: Project[];
@@ -13,7 +13,7 @@ interface DashboardProps {
   risks: Risk[];
 }
 
-export const Dashboard: React.FC<DashboardProps> = ({ projects, tasks, risks }) => {
+export const Dashboard: React.FC<DashboardProps> = ({ projects, tasks }) => {
 
   const projectStats = useMemo(() => {
     return projects.map(project => {

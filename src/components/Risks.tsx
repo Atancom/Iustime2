@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Risk, Task } from '../types';
-import { Plus, Trash2, Loader2, Save, X, Link, AlertTriangle } from 'lucide-react';
+import { Plus, Trash2, Save, X, Link, AlertTriangle } from 'lucide-react';
 
 interface RisksProps {
   risks: Risk[];

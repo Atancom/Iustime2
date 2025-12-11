@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef } from 'react';
 import { Task, Project, ChecklistItem, Attachment } from '../types';
-import { Plus, CheckCircle2, Circle, Trash2, Filter, ArrowUpDown, X, ListTodo, AlertCircle, PlayCircle, CornerDownRight, Paperclip, FileIcon, CheckSquare, MoreHorizontal, Layers, LayoutList, Calculator } from 'lucide-react';
+import { Plus, CheckCircle2, Circle, Trash2, Filter, X, ListTodo, AlertCircle, PlayCircle, CornerDownRight, Paperclip, FileIcon, CheckSquare, MoreHorizontal, Layers, LayoutList, Calculator } from 'lucide-react';
 
 interface TasksProps {
   tasks: Task[];
