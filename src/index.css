@@ -1,0 +1,40 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* RESET GLOBAL ROBUSTO */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f8fafc; /* Fondo gris claro por defecto */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #0f172a; /* Texto oscuro por defecto */
+}
+
+/* Forzar el box-sizing para evitar problemas de layout */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* FIX: Asegurar inputs legibles independientemente del tema del sistema */
+input, select, textarea {
+    color-scheme: light !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1;
+}
+
+/* FIX: Ocultar iconos nativos de contraseña en Edge/IE */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}

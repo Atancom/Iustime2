@@ -1,11 +1,42 @@
-<div align="center">
+# Gestión de Líneas Ius
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Plataforma de gestión de proyectos con Inteligencia Artificial.
 
-  <h1>Built with AI Studio</h2>
+## Estructura del Proyecto
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+El código fuente principal se encuentra en la carpeta `src/`.
+- **Entrada:** `src/main.tsx`
+- **Componentes:** `src/components/`
+- **Tipos:** `src/types.ts`
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+**Nota:** Si ves archivos duplicados en la raíz (como `App.tsx` o `index.tsx` fuera de `src`), ignóralos. El sistema usa los archivos dentro de `src/`.
 
-</div>
+## Instrucciones de Inicio
+
+1.  **Instalar dependencias:**
+    Ejecuta en la terminal:
+    ```bash
+    npm install
+    ```
+
+2.  **Configurar la IA:**
+    Crea un archivo `.env` en la raíz del proyecto y añade tu clave:
+    ```env
+    API_KEY=TU_CLAVE_DE_GOOGLE_AI_STUDIO
+    ```
+
+3.  **Iniciar la aplicación:**
+    Ejecuta:
+    ```bash
+    npm run dev
+    ```
+
+## Credenciales de Acceso (Demo)
+
+**Administrador (Acceso Total):**
+- Email: `admin@iustime.com`
+- Pass: `admin`
+
+**Usuario (Ana Tanco):**
+- Email: `ana.tanco@solfico.es`
+- Pass: `An@t4505`
